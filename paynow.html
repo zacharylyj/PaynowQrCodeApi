@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Paynow QR Generator</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
@@ -37,7 +36,7 @@
             }
             document.getElementById("uenPlaceholder").textContent = uen;
             document.getElementById("amountPlaceholder").textContent = "$" + amount;
-            
+
             var paynow_string = new PaynowQR({
                 uen: uen,
                 amount: amount,
