@@ -44,7 +44,7 @@ app.get('/paynow/:amount/:ref', function (req, res) {
     refNumber: ref,
     company: 'ACES CARE',
   });
-
+  console.log(qr_code.output());
   QRCode.toBuffer(qr_code.output(), function (err, buffer) {
     if (err) {
       return res.status(500).send('Error Occurred');
@@ -54,6 +54,8 @@ app.get('/paynow/:amount/:ref', function (req, res) {
       .toBuffer()
       .then((newBuffer) => {
         let imgSrc = 'data:image/png;base64,' + newBuffer.toString('base64');
+        console.log(newBuffer.toString('base64'));
+        console.log(imgSrc);
         let html = `
           <html>
             <head>
