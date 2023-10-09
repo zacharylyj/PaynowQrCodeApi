@@ -35,10 +35,9 @@
                 alert("Error: 'amount' and 'ref' parameters must be specified in the URL.");
                 return;
             }
-
             document.getElementById("uenPlaceholder").textContent = uen;
             document.getElementById("amountPlaceholder").textContent = "$" + amount;
-
+            
             var paynow_string = new PaynowQR({
                 uen: uen,
                 amount: amount,
