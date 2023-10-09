@@ -6,15 +6,21 @@
 </head>
 
 <body style="text-align: center; background-color: black; color: white; font-family: 'Montserrat', sans-serif;">
-    <div style="width: 100%; margin: auto;">
-        <div id="qrcode"></div><br />
-        <div style="font-size: 32px; text-align: center; width: 483px; margin: 0 auto;">
-            <p style="font-size: 32px; text-align: left; padding-top: 10px; padding-left: 10px; margin: 0;"><strong>ACES
-                    CARE Limited</strong></p>
-            <p style="font-size: 24px; text-align: left; padding-top: 5px; padding-left: 30px; margin: 0;">UEN: <strong
-                    id="uenPlaceholder"></strong><br />Amount: <strong id="amountPlaceholder"></strong></p>
-        </div>
+<div
+    style="width: 100%; margin: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+    <div id="qrcode" style="margin-bottom: 10px;"></div>
+    <div style="width: 100%; max-width: 430px; background-color: red; border-radius: 15px; padding: 10px;">
+        <p style="font-size: 24px; text-align: center; margin: 0; font-weight: bold; color: white;">Scan to Pay</p>
     </div>
+    <div style="font-size: 32px; text-align: center; width: 100%; max-width: 511px;">
+        <p style="font-size: 32px; text-align: left; padding-top: 10px; padding-left: 10px; margin: 0;"><strong>ACES
+                CARE Limited</strong></p>
+        <p style="font-size: 24px; text-align: left; padding-top: 5px; padding-left: 30px; margin: 0;">UEN: <strong
+                id="uenPlaceholder"></strong><br />Amount: <strong id="amountPlaceholder"></strong></p>
+    </div>
+</div>
+
+
 
     <script>
         //ThunderQuoteTeam/PaynowQR
@@ -50,7 +56,7 @@
             var qrcodegen = qrcode(0, 'H');
             qrcodegen.addData(paynow_string.output());
             qrcodegen.make();
-            document.getElementById('qrcode').innerHTML = qrcodegen.createImgTag(7);
+            document.getElementById('qrcode').innerHTML = qrcodegen.createImgTag(6);
 
             var newUrl = window.location.href;
             var hasNoCache = newUrl.includes('no_cache');
@@ -65,5 +71,4 @@
         }
     </script>
 </body>
-
 </html>
