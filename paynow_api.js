@@ -50,7 +50,7 @@ app.get('/paynow/:amount/:ref', function (req, res) {
       return res.status(500).send('Error Occurred');
     }
     sharp(buffer)
-      .resize(500, 500)
+      .resize(600, 600)
       .toBuffer()
       .then((newBuffer) => {
         let imgSrc = 'data:image/png;base64,' + newBuffer.toString('base64');
