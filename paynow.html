@@ -17,16 +17,15 @@
             <strong id="companyName"></strong>
         </p>
         <p style="font-size: 24px; text-align: left; padding-top: 5px; padding-left: 30px; margin: 0;">
-            UEN: <strong id="uenPlaceholder"></strong><br />
+            UEN: <strong id="uenPlaceholder"></strong><br/>
             Amount: <strong id="amountPlaceholder"></strong>
         </p>
     </div>
 </div>
     <script>
-        //paynow.html?amount=&ref=
         window.onload = function () {
-            var name = 'ACES uimited' // !change!
-            var uen = '201608445Z'; // !change!
+            var name = 'ACES Care Limited';
+            var uen = '201608445Z';
             var params = new URLSearchParams(window.location.search);
             var amount = params.get("amount");
             var ref = params.get("ref");
@@ -51,7 +50,7 @@
             var qrcodegen = qrcode(0, 'H');
             qrcodegen.addData(paynow_string.output());
             qrcodegen.make();
-            document.getElementById('qrcode').innerHTML = qrcodegen.createImgTag(6);
+            document.getElementById('qrcode').innerHTML = qrcodegen.createImgTag(5);
 
             var newUrl = window.location.href;
             var hasNoCache = newUrl.includes('no_cache');
